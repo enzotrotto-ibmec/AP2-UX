@@ -1,0 +1,6 @@
+# zip e rascunho de e-mail gerados por ferramentas/gerar-zip.py
+entrega/
+
+# cache do Python
+__pycache__/
+*.pyc

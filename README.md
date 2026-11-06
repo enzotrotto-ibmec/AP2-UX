@@ -13,7 +13,7 @@ template *Royal Hotel* (`royal-master`), com **textos, imagens, logo e favicon n
 | `royal-master/` | O **site** (HTML/CSS/JS). Abra `royal-master/index.html`. |
 | `fotos-originais/` | Fotos **sem otimização**, no tamanho original (entrega do professor). Veja o `LEIA-ME.txt` dentro. |
 | `fotos-otimizadas/` | As mesmas imagens **otimizadas** (WebP/PNG), já com nomes de SEO. Gerada automaticamente. |
-| `ferramentas/` | Scripts que recortam/otimizam as imagens + `relatorio-imagens.md` (peso, formato, pendências). |
+| `ferramentas/` | Scripts que recortam/otimizam as imagens (`imagens.py`) e geram o zip da entrega (`gerar-zip.py`) + `relatorio-imagens.md` (peso, formato, pendências). |
 
 ## Páginas (mesma estrutura do template)
 
@@ -41,6 +41,25 @@ atualiza `royal-master/image/` e `fotos-otimizadas/` e reescreve o `relatorio-im
 Precisa de Python 3 e `pip install pillow`. Todas as dimensões, nomes de arquivo, `alt` e `title`
 estão em `ferramentas/manifesto.py`.
 
+## Reserva de mesa (WhatsApp)
+
+O bloco **Reserve sua mesa** (página inicial e *Cardápio*) funciona sem servidor: o botão valida data, adultos e
+ambiente, confere o horário de funcionamento (terça a domingo, 12h às 23h; segundas bloqueadas no calendário) e abre
+o WhatsApp com a mensagem da reserva pronta. O seletor de data está em português (`DD/MM/AAAA hh:mm`).
+
+Para a mensagem ir direto ao restaurante, coloque o número (DDI+DDD+número, só dígitos, ex.: `5521999999999`) na
+constante `WHATSAPP_RESTAURANTE` em `royal-master/js/custom.js`. Vazio, o WhatsApp abre e a pessoa escolhe o contato.
+
+## Gerar o zip da entrega
+
+```bash
+python ferramentas/gerar-zip.py --integrantes "Nome Completo 1; Nome Completo 2"
+```
+
+Confere o projeto (links quebrados, imagens, `alt`/`title`, fotos originais que faltam) e cria em `entrega/`
+(fora do Git) o `AP2-Ristorantti-Cucina-Italiana-8003.zip` com `site/`, `fotos-originais/` e `fotos-otimizadas/`,
+mais o `EMAIL-rascunho.txt` com destinatário, assunto e corpo prontos.
+
 ## Checklist do briefing
 
 - [x] Estrutura do `royal-master` mantida; conteúdo, logo e favicon trocados
@@ -57,7 +76,9 @@ estão em `ferramentas/manifesto.py`.
       (`terraco`, `pizza_forno`, `pizza`, `ossobuco`, `lasanha`, `camarao`, `salao`, `bar`, `cerveja`, `externa`).
       Hoje o site usa a versão WebP delas (em `ferramentas/fontes-provisorias/`); anote também a autoria/fonte
       de cada uma em `fotos-originais/CREDITOS.md`
-- [ ] Gerar o `.zip` (site + fotos-originais + fotos-otimizadas) e enviar para
+- [x] Restos do template removidos (documentação `royal-Doc/`, `elements.html`, README do template)
+- [x] Reserva de mesa funcional (mensagem pronta no WhatsApp) e script que gera o zip
+- [ ] Rodar `python ferramentas/gerar-zip.py` (depois de colocar os originais) e enviar o `.zip` para
       `maurice.chalom@professores.ibmec.edu.br` com o título **Trabalho AP2 - design gráfico e UX (8003)** e o
       nome completo dos integrantes no corpo do e-mail
 

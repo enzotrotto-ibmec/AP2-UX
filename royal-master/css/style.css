@@ -3601,4 +3601,30 @@ h1, h2, h3, h4, h5, h6 {
 
 /*---------------------------------------------------- */
 
+/*---------------------------------------------------- */
+/* Aviso da reserva de mesa (js/custom.js)               */
+/*---------------------------------------------------- */
+.reserva_aviso {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  z-index: 99999;
+  max-width: 92%;
+  padding: 14px 22px;
+  background: #222;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  border-left: 5px solid #008C45;
+  border-radius: 3px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.reserva_aviso.erro {
+  border-left-color: #CD212A;
+}
+
 /*# sourceMappingURL=style.css.map */

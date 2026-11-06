@@ -60,9 +60,91 @@
     
     
     $('select').niceSelect();
+
+    /*----------------------------------------------------*/
+    /*  Seletor de data e hora em portugues (DD/MM/AAAA hh:mm)
+    /*----------------------------------------------------*/
+    $.fn.datetimepicker.dates['pt-BR'] = {
+        days: ["domingo", "segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"],
+        daysShort: ["dom", "seg", "ter", "qua", "qui", "sex", "sáb", "dom"],
+        daysMin: ["do", "se", "te", "qa", "qi", "sx", "sá", "do"],
+        months: ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"],
+        monthsShort: ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"],
+        today: "Hoje",
+        suffix: [],
+        meridiem: []
+    };
     $('#datetimepicker11,#datetimepicker1').datetimepicker({
-        daysOfWeekDisabled: [1]
+        format: 'dd/mm/yyyy hh:ii',
+        language: 'pt-BR',
+        autoclose: true,
+        startDate: new Date(),
+        minuteStep: 30,
+        daysOfWeekDisabled: [1]   // fechado as segundas-feiras
     });
+
+    /*----------------------------------------------------*/
+    /*  Reserva de mesa -> mensagem pronta no WhatsApp (sem servidor)
+    /*----------------------------------------------------*/
+    // Numero do restaurante: so digitos com DDI+DDD, ex.: "5521999999999".
+    // Vazio = o WhatsApp abre com a mensagem pronta e a pessoa escolhe o contato.
+    var WHATSAPP_RESTAURANTE = "";
+
+    function avisoReserva(texto, erro){
+        var $aviso = $('#reserva-aviso');
+        if (!$aviso.length){
+            $aviso = $('<div id="reserva-aviso" class="reserva_aviso" role="status" aria-live="polite"></div>').appendTo('body');
+        }
+        $aviso.stop(true, true).removeClass('erro ok').addClass(erro ? 'erro' : 'ok').text(texto).fadeIn(200);
+        clearTimeout($aviso.data('t'));
+        $aviso.data('t', setTimeout(function(){ $aviso.fadeOut(300); }, 6000));
+    }
+
+    function reservaWhatsApp(){
+        $('.book_now_btn').on('click', function(e){
+            e.preventDefault();
+            var $box = $(this).closest('.boking_table');
+            var data = $.trim($box.find('input[name="data"]').val());
+            var alternativa = $.trim($box.find('input[name="data_alternativa"]').val());
+            var escolha = function(nome){
+                var $s = $box.find('select[name="' + nome + '"]');
+                return $s.val() ? $.trim($s.find('option:selected').text()) : '';
+            };
+            var adultos = escolha('adultos'), criancas = escolha('criancas'), ambiente = escolha('ambiente');
+
+            var faltam = [];
+            if (!data) faltam.push('data e horário');
+            if (!adultos) faltam.push('número de adultos');
+            if (!ambiente) faltam.push('ambiente');
+            if (faltam.length){
+                avisoReserva('Para reservar, informe: ' + faltam.join(', ') + '.', true);
+                return;
+            }
+
+            // funcionamento: terca a domingo, das 12h as 23h (a segunda ja e bloqueada no seletor)
+            var foraDoHorario = function(txt){
+                var m = /(\d{2}):(\d{2})$/.exec(txt || '');
+                return m ? (+m[1] < 12 || +m[1] >= 23) : false;
+            };
+            if (foraDoHorario(data) || foraDoHorario(alternativa)){
+                avisoReserva('Atendemos de terça a domingo, das 12h às 23h. Escolha um horário nesse intervalo.', true);
+                return;
+            }
+
+            var linhas = ['Olá! Gostaria de reservar uma mesa no Ristorantti Cucina Italiana.',
+                          '',
+                          'Data e horário: ' + data];
+            if (alternativa) linhas.push('Horário alternativo: ' + alternativa);
+            linhas.push('Adultos: ' + adultos);
+            if (criancas) linhas.push('Crianças: ' + criancas);
+            linhas.push('Ambiente: ' + ambiente, '', 'Aguardo a confirmação. Obrigado!');
+
+            var url = 'https://wa.me/' + WHATSAPP_RESTAURANTE + '?text=' + encodeURIComponent(linhas.join('\n'));
+            window.open(url, '_blank', 'noopener');
+            avisoReserva('Abrimos o WhatsApp com a sua reserva pronta. Envie a mensagem para confirmar!', false);
+        });
+    }
+    reservaWhatsApp();
     
      /*---------gallery isotope js-----------*/
     function galleryMasonry(){
