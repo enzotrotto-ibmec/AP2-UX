@@ -673,7 +673,7 @@ button:focus {
 }
 
 .breadcrumb_area .bg-parallax {
-  background: url("../image/about_banner.jpg") no-repeat scroll center 0/cover;
+  background: url("../image/cabecalho-terraco-italiano-mesas-flores.webp") no-repeat scroll center 0/cover;
   opacity: 0.50;
   z-index: -1;
 }
@@ -718,7 +718,7 @@ button:focus {
 }
 
 .blog_banner .bg-parallax {
-  background: url(../image/banner/banner-1.jpg) no-repeat scroll center center;
+  background: url("../image/cabecalho-blog-pizza-forno-manjericao.webp") no-repeat scroll center center;
 }
 
 .blog_banner .banner_content {
@@ -751,7 +751,7 @@ button:focus {
 }
 
 .blog_banner_two .bg-parallax {
-  background: url(../image/banner/banner-2.jpg) no-repeat scroll center top/cover;
+  background: url("../image/cabecalho-post-fachada-rustica-cantina-italiana.webp") no-repeat scroll center top/cover;
 }
 
 /*=============End Blog Banner css =============*/
@@ -829,7 +829,7 @@ button:focus {
 }
 
 .facilities_area .bg-parallax {
-  background: url("../image/pizza-facilites.webp") no-repeat scroll center 0/cover;
+  background: url("../image/pizza-italiana-artesanal-ingredientes-frescos.webp") no-repeat scroll center 0/cover;
   opacity: 0.15;
 }
 

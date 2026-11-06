@@ -1,0 +1,98 @@
+[
+ {
+  "chave": "bruschetta",
+  "prato": "Bruschetta al Pomodoro",
+  "arquivo": "fotos-originais/bruschetta.jpg",
+  "titulo_commons": "Bruschetta on Rustic Bread - Fresh chopped vine ripe tomatoes seasoned with onion, basil, grated pecorino Romano salt & pepper, on a seasoned toasted rustic bread.jpg",
+  "autor": "City Foodsters",
+  "licenca": "CC BY 2.0",
+  "licenca_url": "https://creativecommons.org/licenses/by/2.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Bruschetta_on_Rustic_Bread_-_Fresh_chopped_vine_ripe_tomatoes_seasoned_with_onion,_basil,_grated_pecorino_Romano_salt_%26_pepper,_on_a_seasoned_toasted_rustic_bread.jpg",
+  "baixada": "1920x1280",
+  "original_commons": "4104x2736"
+ },
+ {
+  "chave": "caprese",
+  "prato": "Insalata Caprese",
+  "arquivo": "fotos-originais/caprese.jpg",
+  "titulo_commons": "Caprese-1.jpg",
+  "autor": "Rainer Zenz",
+  "licenca": "CC BY-SA 3.0",
+  "licenca_url": "http://creativecommons.org/licenses/by-sa/3.0/",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Caprese-1.jpg",
+  "baixada": "1920x1440",
+  "original_commons": "3072x2304"
+ },
+ {
+  "chave": "carbonara",
+  "prato": "Spaghetti alla Carbonara",
+  "arquivo": "fotos-originais/carbonara.jpg",
+  "titulo_commons": "Spaghetti Carbonara 2015.jpg",
+  "autor": "jeffreyw",
+  "licenca": "CC BY 2.0",
+  "licenca_url": "https://creativecommons.org/licenses/by/2.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Spaghetti_Carbonara_2015.jpg",
+  "baixada": "1920x1272",
+  "original_commons": "4928x3264"
+ },
+ {
+  "chave": "nhoque",
+  "prato": "Nhoque ao Sugo",
+  "arquivo": "fotos-originais/nhoque.jpg",
+  "titulo_commons": "Gnocchi al Pomodoro (2920979155).jpg",
+  "autor": "Chi King",
+  "licenca": "CC BY 2.0",
+  "licenca_url": "https://creativecommons.org/licenses/by/2.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Gnocchi_al_Pomodoro_(2920979155).jpg",
+  "baixada": "1920x1280",
+  "original_commons": "6144x4096"
+ },
+ {
+  "chave": "risoto",
+  "prato": "Risoto alla Milanese",
+  "arquivo": "fotos-originais/risoto.jpg",
+  "titulo_commons": "Risotto alla milanese with a parmesan cookie and grilled Italian ham (16308525099).jpg",
+  "autor": "Thomas Strosse from Tielt, Belgium",
+  "licenca": "CC BY-SA 2.0",
+  "licenca_url": "https://creativecommons.org/licenses/by-sa/2.0",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Risotto_alla_milanese_with_a_parmesan_cookie_and_grilled_Italian_ham_(16308525099).jpg",
+  "baixada": "1920x1156",
+  "original_commons": "4288x2581"
+ },
+ {
+  "chave": "quatro_queijos",
+  "prato": "Pizza Quattro Formaggi",
+  "arquivo": "fotos-originais/quatro_queijos.jpg",
+  "titulo_commons": "Four Cheese - Pizza 500 2023-11-10.jpg",
+  "autor": "Andy Li",
+  "licenca": "CC0",
+  "licenca_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Four_Cheese_-_Pizza_500_2023-11-10.jpg",
+  "baixada": "1920x1440",
+  "original_commons": "4032x3024"
+ },
+ {
+  "chave": "tiramisu",
+  "prato": "Tiramisù",
+  "arquivo": "fotos-originais/tiramisu.jpg",
+  "titulo_commons": "Purezza's Legendary Tiramisu - Purezza 2024-12-17.jpg",
+  "autor": "Andy Li",
+  "licenca": "CC0",
+  "licenca_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "pagina": "https://commons.wikimedia.org/wiki/File:Purezza%27s_Legendary_Tiramisu_-_Purezza_2024-12-17.jpg",
+  "baixada": "1920x2550",
+  "original_commons": "6144x8160"
+ },
+ {
+  "chave": "panna_cotta",
+  "prato": "Panna Cotta",
+  "arquivo": "fotos-originais/panna_cotta.jpg",
+  "titulo_commons": "ELDERFLOWER PANNA COTTA - The Meeting Place 2025-06-28.jpg",
+  "autor": "Andy Li",
+  "licenca": "CC0",
+  "licenca_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  "pagina": "https://commons.wikimedia.org/wiki/File:ELDERFLOWER_PANNA_COTTA_-_The_Meeting_Place_2025-06-28.jpg",
+  "baixada": "1920x1446",
+  "original_commons": "8160x6144"
+ }
+]

@@ -1,6 +1,6 @@
 <?php
 
-    $to = "rockybd1995@gmail.com";
+    $to = "contato@ristorantti.com.br"; // troque pelo e-mail real do restaurante
     $from = $_REQUEST['email'];
     $name = $_REQUEST['name'];
     $subject = $_REQUEST['subject'];
@@ -13,7 +13,7 @@
 	$headers .= "MIME-Version: 1.0\r\n";
 	$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    $subject = "You have a message from your Cake Template.";
+    $subject = "Nova mensagem pelo site do Ristorantti Cucina Italiana";
 
     $logo = 'http://wethemez.com/test-html/consultplus/img/logo-black.png';
     $link = '#';
