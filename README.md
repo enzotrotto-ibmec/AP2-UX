@@ -50,6 +50,9 @@ estão em `ferramentas/manifesto.py`.
 - [x] Imagens otimizadas (WebP) com **nomes estratégicos para SEO**, `alt` e `title` em todas
 - [x] 8 fotos de pratos do cardápio baixadas do Wikimedia Commons (licença livre; créditos em
       `fotos-originais/CREDITOS.md` e no fim da página *Cardápio*)
+- [x] Fotos de perfil dos 4 clientes dos depoimentos: rostos **fictícios gerados por IA** (domínio público,
+      Wikimedia Commons; créditos em `fotos-originais/CREDITOS.md`). Os avatares dos comentários e do autor do
+      blog ainda são monogramas (iniciais)
 - [ ] Colocar em `fotos-originais/` os arquivos **originais** das 10 fotos que o grupo já usava
       (`terraco`, `pizza_forno`, `pizza`, `ossobuco`, `lasanha`, `camarao`, `salao`, `bar`, `cerveja`, `externa`).
       Hoje o site usa a versão WebP delas (em `ferramentas/fontes-provisorias/`); anote também a autoria/fonte

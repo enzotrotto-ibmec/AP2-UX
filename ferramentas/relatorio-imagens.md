@@ -37,10 +37,10 @@ Troque por uma foto maior para ficar nítida.
 | blog_ossobuco | blog/ossobuco-al-ragu-prato-tradicional-italiano.webp | 360x260 | WEBP | 17.4 | ferramentas\fontes-provisorias\ossobuco.webp | provisoria |
 | blog_lasanha | blog/lasagna-alla-bolognese-receita-italiana.webp | 360x260 | WEBP | 13.5 | ferramentas\fontes-provisorias\lasanha.webp | provisoria |
 | blog_camarao | blog/tagliatelle-con-gamberi-camarao-massa-fresca.webp | 360x260 | WEBP | 14.1 | ferramentas\fontes-provisorias\camarao.webp | provisoria |
-| dep1 | depoimentos/cliente-ana-beatriz-costa-ristorantti.webp | 80x80 | WEBP | 1.5 | (gerada) | ok |
-| dep2 | depoimentos/cliente-rafael-mendes-ristorantti.webp | 80x80 | WEBP | 1.4 | (gerada) | ok |
-| dep3 | depoimentos/cliente-camila-ferreira-ristorantti.webp | 80x80 | WEBP | 1.4 | (gerada) | ok |
-| dep4 | depoimentos/cliente-lucas-oliveira-ristorantti.webp | 80x80 | WEBP | 1.2 | (gerada) | ok |
+| dep1 | depoimentos/cliente-ana-beatriz-costa-ristorantti.webp | 80x80 | WEBP | 1.4 | fotos-originais\cliente_ana.jpg | ok |
+| dep2 | depoimentos/cliente-rafael-mendes-ristorantti.webp | 80x80 | WEBP | 1.5 | fotos-originais\cliente_rafael.jpg | ok |
+| dep3 | depoimentos/cliente-camila-ferreira-ristorantti.webp | 80x80 | WEBP | 1.4 | fotos-originais\cliente_camila.jpg | ok |
+| dep4 | depoimentos/cliente-lucas-oliveira-ristorantti.webp | 80x80 | WEBP | 1.5 | fotos-originais\cliente_lucas.png | ok |
 | insta1 | instagram/pizza-margherita-manjericao-instagram-ristorantti.webp | 58x58 | WEBP | 1.7 | ferramentas\fontes-provisorias\pizza.webp | provisoria |
 | insta2 | instagram/ossobuco-molho-de-tomate-instagram-ristorantti.webp | 58x58 | WEBP | 1.4 | ferramentas\fontes-provisorias\ossobuco.webp | provisoria |
 | insta3 | instagram/lasagna-bolognese-instagram-ristorantti.webp | 58x58 | WEBP | 1.5 | ferramentas\fontes-provisorias\lasanha.webp | provisoria |

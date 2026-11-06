@@ -15,4 +15,17 @@ As versões do site são recortes otimizados (WebP) feitos a partir delas. As li
 | `tiramisu.jpg` | Tiramisù | Andy Li | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Purezza's Legendary Tiramisu - Purezza 2024-12-17.jpg](https://commons.wikimedia.org/wiki/File:Purezza%27s_Legendary_Tiramisu_-_Purezza_2024-12-17.jpg) |
 | `panna_cotta.jpg` | Panna Cotta | Andy Li | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [ELDERFLOWER PANNA COTTA - The Meeting Place 2025-06-28.jpg](https://commons.wikimedia.org/wiki/File:ELDERFLOWER_PANNA_COTTA_-_The_Meeting_Place_2025-06-28.jpg) |
 
+## Fotos de perfil dos depoimentos (clientes fictícios)
+
+Os 4 clientes do bloco *Depoimentos dos nossos clientes* (página inicial e *Sobre nós*) são **personagens fictícios**.
+As fotos são **rostos gerados por IA (StyleGAN)** — não são pessoas reais — baixadas do Wikimedia Commons em 06/11/2026
+em 1024 x 1024 px, todas em **domínio público** (não exigem crédito; o autor é citado por cortesia) e salvas aqui sem edição.
+
+| Arquivo | Cliente fictício | Autor | Licença | Fonte |
+|---|---|---|---|---|
+| `cliente_ana.jpg` | Ana Beatriz Costa | Owlsmcgee | Domínio público | [Woman 1.jpg](https://commons.wikimedia.org/wiki/File:Woman_1.jpg) |
+| `cliente_rafael.jpg` | Rafael Mendes | Owlsmcgee | Domínio público | [Man 2.jpg](https://commons.wikimedia.org/wiki/File:Man_2.jpg) |
+| `cliente_camila.jpg` | Camila Ferreira | StyleGAN2 | Domínio público | [This Person Does Not Exist example.jpg](https://commons.wikimedia.org/wiki/File:This_Person_Does_Not_Exist_example.jpg) |
+| `cliente_lucas.png` | Lucas Oliveira | StyleGAN2 | Domínio público | [GAN Mensch StyleGAN2.png](https://commons.wikimedia.org/wiki/File:GAN_Mensch_StyleGAN2.png) |
+
 Obs.: as fotos do ambiente, de `pizza`, `ossobuco`, `lasanha` e `camarao` são as escolhidas pelo grupo; anote aqui a autoria/fonte delas também.

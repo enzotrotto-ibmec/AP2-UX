@@ -38,6 +38,11 @@ FONTES = {
     "quatro_queijos": ("Quatro queijos",   "Pizza quattro formaggi"),
     "tiramisu":       ("Tiramisu",         "Fatia de tiramisu com cacau"),
     "panna_cotta":    ("Panna cotta",      "Panna cotta com calda de frutas vermelhas"),
+    # fotos de perfil fictícias (rostos gerados por IA) dos depoimentos - ja baixadas
+    "cliente_ana":    ("Perfil Ana Beatriz",   "Rosto de mulher jovem, fundo neutro (1024 x 1024 px)"),
+    "cliente_rafael": ("Perfil Rafael",        "Rosto de homem, fundo neutro (1024 x 1024 px)"),
+    "cliente_camila": ("Perfil Camila",        "Rosto de mulher sorrindo (1024 x 1024 px)"),
+    "cliente_lucas":  ("Perfil Lucas",         "Rosto de homem jovem sorrindo (1024 x 1024 px)"),
 }
 
 # --------------------------------------------------------------------------
@@ -120,14 +125,15 @@ foto("blog_camarao", "blog/tagliatelle-con-gamberi-camarao-massa-fresca.webp", 3
      "Tagliatelle con Gamberi - massa fresca com camarões")
 
 # ---------------- index: depoimentos (template: testtimonial-1, 80x80) ----------------
-avatar("dep1", "depoimentos/cliente-ana-beatriz-costa-ristorantti.webp", 80, "AC", "#b5482f",
-       "Avatar de Ana Beatriz Costa, cliente do Ristorantti", "Ana Beatriz Costa")
-avatar("dep2", "depoimentos/cliente-rafael-mendes-ristorantti.webp", 80, "RM", "#5b7c3a",
-       "Avatar de Rafael Mendes, cliente do Ristorantti", "Rafael Mendes")
-avatar("dep3", "depoimentos/cliente-camila-ferreira-ristorantti.webp", 80, "CF", "#c98f2b",
-       "Avatar de Camila Ferreira, cliente do Ristorantti", "Camila Ferreira")
-avatar("dep4", "depoimentos/cliente-lucas-oliveira-ristorantti.webp", 80, "LO", "#7b3f3f",
-       "Avatar de Lucas Oliveira, cliente do Ristorantti", "Lucas Oliveira")
+# fotos de perfil FICTICIAS (rostos gerados por IA, dominio publico - ver fotos-originais/CREDITOS.md)
+foto("dep1", "depoimentos/cliente-ana-beatriz-costa-ristorantti.webp", 80, 80, "cliente_ana",
+     "Foto de perfil de Ana Beatriz Costa, cliente do Ristorantti", "Ana Beatriz Costa", (.5, .48), 1.25)
+foto("dep2", "depoimentos/cliente-rafael-mendes-ristorantti.webp", 80, 80, "cliente_rafael",
+     "Foto de perfil de Rafael Mendes, cliente do Ristorantti", "Rafael Mendes", (.5, .48), 1.25)
+foto("dep3", "depoimentos/cliente-camila-ferreira-ristorantti.webp", 80, 80, "cliente_camila",
+     "Foto de perfil de Camila Ferreira, cliente do Ristorantti", "Camila Ferreira", (.5, .48), 1.25)
+foto("dep4", "depoimentos/cliente-lucas-oliveira-ristorantti.webp", 80, 80, "cliente_lucas",
+     "Foto de perfil de Lucas Oliveira, cliente do Ristorantti", "Lucas Oliveira", (.5, .48), 1.25)
 
 # ---------------- rodape: instagram (template: Image-01..08, 58x58) ----------------
 foto("insta1", "instagram/pizza-margherita-manjericao-instagram-ristorantti.webp", 58, 58, "pizza",
