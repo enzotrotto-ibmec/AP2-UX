@@ -718,7 +718,7 @@ button:focus {
 }
 
 .blog_banner .bg-parallax {
-  background: url("../image/cabecalho-blog-pizza-forno-manjericao.webp") no-repeat scroll center center;
+  background: url("../image/cabecalho-blog-pizza-forno-a-lenha.webp") no-repeat scroll center center;
 }
 
 .blog_banner .banner_content {
@@ -751,7 +751,7 @@ button:focus {
 }
 
 .blog_banner_two .bg-parallax {
-  background: url("../image/cabecalho-post-fachada-rustica-cantina-italiana.webp") no-repeat scroll center top/cover;
+  background: url("../image/cabecalho-post-varanda-rustica-cantina-italiana.webp") no-repeat scroll center top/cover;
 }
 
 /*=============End Blog Banner css =============*/
@@ -829,7 +829,7 @@ button:focus {
 }
 
 .facilities_area .bg-parallax {
-  background: url("../image/pizza-italiana-artesanal-ingredientes-frescos.webp") no-repeat scroll center 0/cover;
+  background: url("../image/pizza-artesanal-forno-a-lenha-cantina-italiana.webp") no-repeat scroll center 0/cover;
   opacity: 0.15;
 }
 

@@ -28,4 +28,20 @@ em 1024 x 1024 px, todas em **domínio público** (não exigem crédito; o autor
 | `cliente_camila.jpg` | Camila Ferreira | StyleGAN2 | Domínio público | [This Person Does Not Exist example.jpg](https://commons.wikimedia.org/wiki/File:This_Person_Does_Not_Exist_example.jpg) |
 | `cliente_lucas.png` | Lucas Oliveira | StyleGAN2 | Domínio público | [GAN Mensch StyleGAN2.png](https://commons.wikimedia.org/wiki/File:GAN_Mensch_StyleGAN2.png) |
 
-Obs.: as fotos do ambiente, de `pizza`, `ossobuco`, `lasanha` e `camarao` são as escolhidas pelo grupo; anote aqui a autoria/fonte delas também.
+## Fotos do ambiente e dos pratos principais
+
+Baixadas do **Wikimedia Commons** (licenças livres) em 12/11/2026, e salvas aqui em até 2560 px de largura (só reduzidas, sem nenhum outro ajuste, para o zip caber em um e-mail).
+Os recortes do site são versões otimizadas (WebP) feitas a partir delas. **CC BY / CC BY-SA** exigem o crédito abaixo (já aparece na página *Cardápio*); **CC0** dispensa crédito.
+
+| Arquivo | Uso no site | Autor | Licença | Fonte |
+|---|---|---|---|---|
+| `terraco.jpg` | Terraço (banner, cabeçalhos, galeria) | PattayaPatrol | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [DSCF1067 A tranquil garden patio framed by vibrant pink bou...](https://commons.wikimedia.org/wiki/File:DSCF1067_A_tranquil_garden_patio_framed_by_vibrant_pink_bougainvillea_cozy_metal_bistro_chairs_and_shaded_wooden_walkways_-_the_perfect_spot_to_relax_outdoors.jpg) |
+| `pizza_forno.jpg` | Pizza no forno a lenha | Jared Tarbell from Awesometown, United States of America | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | [Pizza baking in Wood-fired oven.jpg](https://commons.wikimedia.org/wiki/File:Pizza_baking_in_Wood-fired_oven.jpg) |
+| `pizza.jpg` | Pizza margherita | Lombroso | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Pizza Margherita ().JPG](https://commons.wikimedia.org/wiki/File:Pizza_Margherita_().JPG) |
+| `ossobuco.jpg` | Ossobuco al Ragù | stu_spivack | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0) | [Ossobuco - stu spivack.jpg](https://commons.wikimedia.org/wiki/File:Ossobuco_-_stu_spivack.jpg) |
+| `lasanha.jpg` | Lasagna alla Bolognese | Miansari66 | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Lasagna Serving.jpg](https://commons.wikimedia.org/wiki/File:Lasagna_Serving.jpg) |
+| `camarao.jpg` | Tagliatelle com camarão | Kgbo | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Pier 33 restaurant Prawn & Crab Tagliatelle, Mooloolaba Que...](https://commons.wikimedia.org/wiki/File:Pier_33_restaurant_Prawn_%26_Crab_Tagliatelle,_Mooloolaba_Queensland.jpg) |
+| `salao.jpg` | Salão principal | PattayaPatrol | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [DZ6 0547 A cozy stylish restaurant interior with patterned ...](https://commons.wikimedia.org/wiki/File:DZ6_0547_A_cozy_stylish_restaurant_interior_with_patterned_tile_floors_warm_ambient_lighting_and_large_glass_windows_revealing_a_leafy_courtyard_-_diners_enjoy_a_relaxed_meal_in_an_intimate_artfully_designed_space.jpg) |
+| `bar.jpg` | Bar principal | Eaters Collective eaterscollective | [CC0](http://creativecommons.org/publicdomain/zero/1.0/deed.en) | [Busy bar shelf (Unsplash).jpg](https://commons.wikimedia.org/wiki/File:Busy_bar_shelf_(Unsplash).jpg) |
+| `cerveja.jpg` | Área da cerveja | Wilfredor | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Bar counter with beer taps, Vieux-Québec.jpg](https://commons.wikimedia.org/wiki/File:Bar_counter_with_beer_taps,_Vieux-Qu%C3%A9bec.jpg) |
+| `externa.jpg` | Área externa | Андрей Романенко | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | [Restaurant tables at Piazza delle Erbe (Mantua).jpg](https://commons.wikimedia.org/wiki/File:Restaurant_tables_at_Piazza_delle_Erbe_(Mantua).jpg) |

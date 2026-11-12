@@ -18,17 +18,17 @@ MARCA = "Ristorantti Cucina Italiana"
 # FOTOS-BASE: chave -> (nome curto, o que a foto deve mostrar)
 # --------------------------------------------------------------------------
 FONTES = {
-    # ja temos (fotos escolhidas pelo grupo; versao provisoria em ferramentas/fontes-provisorias)
-    "terraco":    ("Terraco italiano",   "Terraco/patio rustico com mesas e cadeiras azuis, vasos de flores e guarda-sois (min. 1920 px de largura)"),
-    "pizza_forno": ("Pizza no forno",    "Pizza artesanal sobre bandeja, com manjericao e tomates ao redor (min. 1920 px de largura)"),
-    "pizza":      ("Pizza margherita",   "Close de pizza margherita com folhas de manjericao"),
-    "ossobuco":   ("Ossobuco al Ragu",   "Prato de ossobuco com molho de tomate, cenoura e salsinha"),
+    # fotos-base (originais em fotos-originais/, baixadas do Wikimedia Commons)
+    "terraco":    ("Terraco italiano",   "Terraco/jardim com varanda de madeira, mesa de bistro e bougainvilleas rosas"),
+    "pizza_forno": ("Pizza no forno",    "Pizza artesanal sobre a pa de madeira diante do forno a lenha aceso"),
+    "pizza":      ("Pizza margherita",   "Pizza margherita sobre tabua de madeira, com manjericao e mussarela"),
+    "ossobuco":   ("Ossobuco al Ragu",   "Prato de ossobuco dourado, com molho e ervas frescas"),
     "lasanha":    ("Lasagna Bolognese",  "Fatia de lasanha a bolonhesa gratinada em prato branco"),
     "camarao":    ("Massa com camarao",  "Tagliatelle/espaguete com camaroes e ervas frescas"),
-    "salao":      ("Salao principal",    "Salao interno rustico do restaurante"),
+    "salao":      ("Salao principal",    "Salao interno com piso de ladrilhos e janelas para o jardim"),
     "bar":        ("Bar principal",      "Bar com prateleiras de garrafas e banquetas"),
-    "cerveja":    ("Area da cerveja",    "Balcao com chopeiras de cerveja"),
-    "externa":    ("Area externa",       "Rua/area externa italiana com mesas ao ar livre"),
+    "cerveja":    ("Area da cerveja",    "Balcao com chopeiras diante de parede de pedra"),
+    "externa":    ("Area externa",       "Praca italiana com mesas ao ar livre"),
     # ainda NAO temos - 8 pratos do cardapio (quadro "FOTO PENDENTE" ate chegarem)
     "bruschetta":     ("Bruschetta",       "Bruschetta al pomodoro: pao tostado com tomate, manjericao e azeite"),
     "caprese":        ("Insalata Caprese", "Salada caprese: tomate, mussarela de bufala e manjericao"),
@@ -73,34 +73,35 @@ def fundo(id, out, w, h, src, focus=(.5, .5), zoom=1.0):
     _add(id, out, w, h, "css", src, focus, zoom)
 
 
-def avatar(id, out, tam, ini, cor, alt, title):
-    _add(id, out, tam, tam, "avatar", None, (.5, .5), 1.0, alt, title, ini, cor)
+def avatar(id, out, tam, ini, cor, alt, title, altura=None):
+    """Monograma (iniciais). Quadrado, salvo se 'altura' for dada (o c4 do template e 62x64)."""
+    _add(id, out, tam, altura or tam, "avatar", None, (.5, .5), 1.0, alt, title, ini, cor)
 
 
 # ---------------- marca ----------------
-_add("logo", "logo-ristorantti-cucina-italiana.png", 460, 100, "logo", None, (.5, .5), 1.0,
+_add("logo", "logo-ristorantti-cucina-italiana.png", 326, 60, "logo", None, (.5, .5), 1.0,
      "Logotipo do Ristorantti Cucina Italiana", "Ristorantti Cucina Italiana - Início")
 _add("favicon", "favicon.png", 64, 64, "favicon", None, (.5, .5), 1.0, "", "")
 
 # ---------------- fundos (CSS) ----------------
 fundo("bg_banner",     "restaurante-cucina-italiana.webp",                      1920, 1210, "terraco")
-fundo("bg_facilidades", "pizza-italiana-artesanal-ingredientes-frescos.webp",   1920, 1140, "pizza_forno")
+fundo("bg_facilidades", "pizza-artesanal-forno-a-lenha-cantina-italiana.webp",   1920, 1140, "pizza_forno")
 fundo("bg_cabecalho",  "cabecalho-terraco-italiano-mesas-flores.webp",          1920, 1042, "terraco", (.5, .55))
-fundo("bg_blog",       "cabecalho-blog-pizza-forno-manjericao.webp",            1920, 1116, "pizza_forno")
-fundo("bg_post",       "cabecalho-post-fachada-rustica-cantina-italiana.webp",  1920, 1127, "terraco", (.5, .2))
+fundo("bg_blog",       "cabecalho-blog-pizza-forno-a-lenha.webp",            1920, 1116, "pizza_forno")
+fundo("bg_post",       "cabecalho-post-varanda-rustica-cantina-italiana.webp",  1920, 1127, "terraco", (.5, .2))
 
 # ---------------- index: areas do restaurante (template: room1-4) ----------------
-foto("area_salao", "ambientes/salao-principal-restaurante-italiano-rustico.webp", 263, 270, "salao",
-     "Área comum do restaurante: salão com mesas e cadeiras de madeira e decoração rústica italiana",
+foto("area_salao", "ambientes/salao-principal-piso-ladrilhos-restaurante-italiano.webp", 263, 270, "salao",
+     "Área comum do restaurante: salão com piso de ladrilhos, mesas de madeira e janelas de vidro para o jardim",
      "Área comum - Ristorantti Cucina Italiana")
 foto("area_bar", "ambientes/bar-principal-garrafas-banquetas-restaurante-italiano.webp", 262, 270, "bar",
      "Bar principal do restaurante italiano com prateleiras de garrafas e banquetas ao balcão",
      "Bar principal - Ristorantti Cucina Italiana")
 foto("area_cerveja", "ambientes/area-da-cerveja-chopeiras-bar-cantina-italiana.webp", 263, 270, "cerveja",
-     "Área da cerveja com chopeiras de cervejas importadas sobre o balcão de madeira",
+     "Área da cerveja com chopeiras de cervejas importadas diante de uma parede de pedra com taças penduradas",
      "Área da cerveja - Ristorantti Cucina Italiana")
-foto("area_externa", "ambientes/area-externa-mesas-rua-italiana-bar-pizzaria.webp", 262, 270, "externa",
-     "Área externa do restaurante com mesas ao ar livre em uma charmosa rua italiana",
+foto("area_externa", "ambientes/area-externa-mesas-praca-italiana-restaurante.webp", 262, 270, "externa",
+     "Área externa do restaurante com mesas ao ar livre em uma charmosa praça italiana",
      "Área externa - Ristorantti Cucina Italiana")
 
 # ---------------- index: sobre nos (template: about_bg) ----------------
@@ -110,12 +111,12 @@ foto("sobre_pizza", "pizza-margherita-manjericao-massa-artesanal.webp", 555, 450
 
 # ---------------- about.html (template: about_bg, 555x450) ----------------
 foto("sobre_terraco", "cantina-terraco-rustico-historia-sobre-nos.webp", 555, 450, "terraco",
-     "Terraço rústico da cantina com mesas, cadeiras azuis e vasos de flores diante da fachada de pedra",
+     "Terraço da cantina com varanda de madeira, mesa de bistrô e bougainvílleas rosas",
      "Nossa cantina - Ristorantti Cucina Italiana", (.4, .5), 1.0)
 
 # ---------------- index: ultimas do blog (template: blog-1..3, 360x260) ----------------
 foto("blog_ossobuco", "blog/ossobuco-al-ragu-prato-tradicional-italiano.webp", 360, 260, "ossobuco",
-     "Ossobuco al Ragù servido em prato branco com molho de tomate, cenoura e salsinha",
+     "Ossobuco al Ragù servido em prato branco dourado, com molho e ervas frescas",
      "Ossobuco al Ragù - receita italiana tradicional")
 foto("blog_lasanha", "blog/lasagna-alla-bolognese-receita-italiana.webp", 360, 260, "lasanha",
      "Fatia de lasagna alla Bolognese com camadas de massa, ragù e queijo gratinado",
@@ -144,14 +145,14 @@ foto("insta3", "instagram/lasagna-bolognese-instagram-ristorantti.webp", 58, 58,
      "Instagram do Ristorantti: lasagna alla Bolognese", "Lasagna alla Bolognese", (.55, .62), 2.2)
 foto("insta4", "instagram/massa-com-camarao-instagram-ristorantti.webp", 58, 58, "camarao",
      "Instagram do Ristorantti: massa com camarão", "Massa com camarão", (.55, .5), 1.8)
-foto("insta5", "instagram/terraco-mesas-azuis-instagram-ristorantti.webp", 58, 58, "terraco",
-     "Instagram do Ristorantti: mesas e cadeiras azuis no terraço", "Terraço italiano", (.3, .55), 2.5)
+foto("insta5", "instagram/terraco-flores-rosas-instagram-ristorantti.webp", 58, 58, "terraco",
+     "Instagram do Ristorantti: flores rosas no terraço", "Terraço italiano", (.5, .78), 3.0)
 foto("insta6", "instagram/bar-principal-instagram-ristorantti.webp", 58, 58, "bar",
      "Instagram do Ristorantti: bar principal", "Bar principal", (.5, .5), 1.0)
 foto("insta7", "instagram/pizza-no-forno-instagram-ristorantti.webp", 58, 58, "pizza_forno",
-     "Instagram do Ristorantti: pizza artesanal com manjericão e tomates", "Pizza artesanal", (.5, .62), 2.4)
-foto("insta8", "instagram/rua-italiana-mesas-instagram-ristorantti.webp", 58, 58, "externa",
-     "Instagram do Ristorantti: mesas ao ar livre na rua italiana", "Área externa", (.5, .45), 1.3)
+     "Instagram do Ristorantti: pizza artesanal indo ao forno a lenha", "Pizza artesanal", (.5, .47), 2.6)
+foto("insta8", "instagram/praca-italiana-mesas-instagram-ristorantti.webp", 58, 58, "externa",
+     "Instagram do Ristorantti: mesas ao ar livre na praça italiana", "Área externa", (0.5, 0.47), 2.6)
 
 # ---------------- cardapio / accomodation.html (template: room1-4, 263x270 e 262x270) ----------------
 foto("prato_ossobuco", "cardapio/ossobuco-al-ragu-prato-principal-cantina.webp", 263, 270, "ossobuco",
@@ -159,7 +160,7 @@ foto("prato_ossobuco", "cardapio/ossobuco-al-ragu-prato-principal-cantina.webp",
      "Ossobuco al Ragù - Ristorantti Cucina Italiana", (.5, .5), 1.0)
 foto("prato_lasanha", "cardapio/lasagna-alla-bolognese-massa-fresca-gratinada.webp", 262, 270, "lasanha",
      "Lasagna alla Bolognese com massa fresca, ragù de carne e queijo gratinado",
-     "Lasagna alla Bolognese - Ristorantti Cucina Italiana", (.55, .6), 1.5)
+     "Lasagna alla Bolognese - Ristorantti Cucina Italiana", (.5, .5), 1.0)
 foto("prato_tagliatelle", "cardapio/tagliatelle-con-gamberi-camarao-azeite-alho.webp", 263, 270, "camarao",
      "Tagliatelle con Gamberi: massa fresca com camarões, azeite, alho e ervas",
      "Tagliatelle con Gamberi - Ristorantti Cucina Italiana", (.55, .5), 1.0)
@@ -192,33 +193,33 @@ foto("prato_panna_cotta", "cardapio/panna-cotta-calda-frutas-vermelhas-sobremesa
      "Panna Cotta - Ristorantti Cucina Italiana")
 
 # ---------------- galeria (template: gallery/01..06, 01-1..03-1) ----------------
-foto("gal_01", "galeria/mesas-azuis-terraco-restaurante-italiano.webp", 360, 250, "terraco",
-     "Mesas e cadeiras azuis e brancas no terraço rústico do restaurante italiano",
-     "Terraço do Ristorantti com mesas azuis", (.42, .5), 1.8)
+foto("gal_01", "galeria/terraco-florido-mesa-bistro-restaurante-italiano.webp", 360, 250, "terraco",
+     "Terraço do restaurante italiano com mesa de bistrô cercada por bougainvílleas rosas",
+     "Terraço florido do Ristorantti", (.7, .72), 1.5)
 foto("gal_02", "galeria/pizza-margherita-close-manjericao-queijo.webp", 360, 380, "pizza",
      "Close de pizza margherita com manjericão fresco e queijo derretido",
      "Pizza margherita em close", (.5, .5), 1.0)
 foto("gal_03", "galeria/lasagna-bolognese-camadas-ragu-queijo.webp", 360, 250, "lasanha",
      "Lasagna alla Bolognese com camadas de massa, molho ragù e queijo gratinado",
      "Lasagna alla Bolognese", (.5, .6), 1.0)
-foto("gal_04", "galeria/fachada-rustica-pedra-janelas-azuis-trepadeira.webp", 360, 380, "terraco",
-     "Fachada rústica de pedra com janelas azuis e trepadeira ao lado do terraço",
-     "Fachada rústica do Ristorantti", (.25, .25), 1.7)
+foto("gal_04", "galeria/varanda-madeira-jardim-terraco-cantina-italiana.webp", 360, 380, "terraco",
+     "Varanda de madeira com cobertura rústica e flores no jardim do terraço",
+     "Varanda rústica do Ristorantti", (.42, .8), 1.5)
 foto("gal_05", "galeria/tagliatelle-camarao-prato-massa-fresca.webp", 360, 250, "camarao",
      "Prato de massa fresca com camarões grandes finalizado com ervas",
      "Massa fresca com camarões", (.5, .5), 1.0)
-foto("gal_06", "galeria/ingredientes-frescos-manjericao-tomate-pizza.webp", 360, 380, "pizza_forno",
-     "Folhas de manjericão fresco, tomates e temperos ao lado da pizza artesanal",
-     "Ingredientes frescos da pizza", (.17, .2), 1.8)
+foto("gal_06", "galeria/pizza-assando-forno-a-lenha-pa-de-madeira.webp", 360, 380, "pizza_forno",
+     "Pizza artesanal sendo levada ao forno a lenha sobre uma pá de madeira",
+     "Pizza no forno a lenha", (.5, .47), 2.2)
 foto("gal_07", "galeria/ossobuco-al-ragu-molho-tomate-prato-branco.webp", 360, 250, "ossobuco",
      "Ossobuco al Ragù com molho de tomate e salsinha em prato branco",
      "Ossobuco al Ragù", (.5, .5), 1.0)
-foto("gal_08", "galeria/cadeiras-azuis-vasos-flores-terraco-italiano.webp", 360, 380, "terraco",
-     "Cadeiras azuis e vasos de flores coloridos no terraço italiano",
-     "Cadeiras azuis e flores no terraço", (.1, .62), 2.0)
-foto("gal_09", "galeria/pizza-artesanal-forno-bandeja-ingredientes.webp", 360, 250, "pizza_forno",
-     "Pizza artesanal assada sobre bandeja, cercada de manjericão e tomates",
-     "Pizza artesanal recém-saída do forno", (.5, .62), 1.3)
+foto("gal_08", "galeria/cadeiras-mesa-flores-rosas-terraco-italiano.webp", 360, 380, "terraco",
+     "Cadeiras de ferro, mesa de bistrô e flores rosas no terraço italiano",
+     "Cadeiras e flores no terraço", (.88, .62), 2.0)
+foto("gal_09", "galeria/pizza-artesanal-pa-madeira-forno-a-lenha.webp", 360, 250, "pizza_forno",
+     "Pizza artesanal sobre uma pá de madeira diante do forno a lenha aceso",
+     "Pizza artesanal indo ao forno a lenha", (0.5, 0.5), 1.2)
 
 # ---------------- blog.html (template: cat-post 360x220, main-blog 555x280, post1-4 100x60, add 300x250, author 120x120) ----------------
 foto("cat_massas", "blog/categorias/massas-frescas-lasagna-categoria-blog.webp", 360, 220, "lasanha",
@@ -229,7 +230,7 @@ foto("cat_classicos", "blog/categorias/pratos-classicos-ossobuco-categoria-blog.
      "Categoria Pratos Clássicos: ossobuco al ragù", "Pratos Clássicos", (.5, .5), 1.0)
 
 foto("post1", "blog/destaques/ossobuco-al-ragu-destaque-blog-cantina.webp", 555, 280, "ossobuco",
-     "Ossobuco al Ragù: carne macia com molho de tomate, cenoura e salsinha em prato branco",
+     "Ossobuco al Ragù: carne macia dourado, com molho e ervas frescas em prato branco",
      "Ossobuco al Ragù - destaque do blog")
 foto("post2", "blog/destaques/lasagna-alla-bolognese-destaque-blog-cantina.webp", 555, 280, "lasanha",
      "Lasagna alla Bolognese com camadas de massa fresca, ragù e queijo gratinado",
@@ -241,7 +242,7 @@ foto("post4", "blog/destaques/pizza-napoletana-massa-fermentacao-destaque-blog.w
      "Pizza napoletana de massa artesanal com tomate, queijo e manjericão",
      "Pizza napoletana - blog Ristorantti", (.5, .45))
 foto("post5", "blog/destaques/aperitivo-ao-ar-livre-terraco-cantina-italiana.webp", 555, 280, "terraco",
-     "Terraço da cantina com mesas ao ar livre, ideal para um aperitivo italiano",
+     "Terraço florido da cantina, ideal para um aperitivo italiano ao ar livre",
      "Aperitivo ao ar livre - blog Ristorantti", (.5, .5))
 
 foto("pop1", "blog/populares/ossobuco-miniatura-post-popular.webp", 100, 60, "ossobuco",
@@ -251,11 +252,11 @@ foto("pop2", "blog/populares/lasagna-miniatura-post-popular.webp", 100, 60, "las
 foto("pop3", "blog/populares/pizza-miniatura-post-popular.webp", 100, 60, "pizza",
      "Miniatura do post sobre pizza napoletana", "Pizza napoletana", (.4, .4), 1.3)
 foto("pop4", "blog/populares/terraco-miniatura-post-popular.webp", 100, 60, "terraco",
-     "Miniatura do post sobre aperitivo ao ar livre", "Aperitivo ao ar livre", (.3, .55), 2.2)
+     "Miniatura do post sobre aperitivo ao ar livre", "Aperitivo ao ar livre", (0.7, 0.7), 1.6)
 
 avatar("autor", "blog/chef-marco-bellini-autor-do-blog.webp", 120, "MB", "#8b2e2e",
        "Avatar do chef Marco Bellini, autor do blog do Ristorantti", "Chef Marco Bellini")
-_add("promo", "blog/promo-reserve-sua-mesa-ristorantti.webp", 300, 250, "promo", "pizza_forno", (.5, .62), 1.6,
+_add("promo", "blog/promo-reserve-sua-mesa-ristorantti.webp", 300, 250, "promo", "pizza_forno", (.5, .47), 1.6,
      "Anúncio: reserve sua mesa no Ristorantti Cucina Italiana", "Reserve sua mesa - Ristorantti")
 
 # ---------------- blog-single.html (template: feature-img1 750x350, post-img1/2 360x350, prev/next 60x60, c1-c5 60x60) ----------------
@@ -267,11 +268,11 @@ foto("art_img1", "blog/ossobuco-cozido-lentamente-molho-de-tomate-cenoura.webp",
      "Detalhe do ossobuco", (.4, .5), 1.0)
 foto("art_img2", "blog/mesas-do-terraco-onde-o-ossobuco-e-servido.webp", 360, 350, "terraco",
      "Mesas do terraço do Ristorantti, onde o ossobuco também pode ser saboreado ao ar livre",
-     "Terraço do Ristorantti", (.42, .5), 2.2)
+     "Terraço do Ristorantti", (.55, .72), 1.5)
 foto("nav_prev", "blog/post-anterior-lasagna-miniatura.webp", 60, 60, "lasanha",
      "Miniatura do post anterior: lasagna alla Bolognese", "Post anterior", (.55, .62), 2.2)
 foto("nav_next", "blog/proximo-post-pizza-napoletana-miniatura.webp", 60, 60, "pizza",
-     "Miniatura do próximo post: pizza napoletana", "Próximo post", (.4, .4), 1.6)
+     "Miniatura do próximo post: pizza napoletana", "Próximo post", (0.55, 0.72), 1.5)
 
 avatar("com1", "blog/comentarios/leitora-juliana-torres-avatar.webp", 60, "JT", "#b5482f",
        "Avatar da leitora Juliana Torres", "Juliana Torres")
@@ -279,7 +280,7 @@ avatar("com2", "blog/comentarios/leitor-marcos-vinicius-avatar.webp", 60, "MV", 
        "Avatar do leitor Marcos Vinícius", "Marcos Vinícius")
 avatar("com3", "blog/comentarios/leitora-patricia-lima-avatar.webp", 60, "PL", "#c98f2b",
        "Avatar da leitora Patrícia Lima", "Patrícia Lima")
-avatar("com4", "blog/comentarios/leitor-henrique-alves-avatar.webp", 60, "HA", "#7b3f3f",
-       "Avatar do leitor Henrique Alves", "Henrique Alves")
+avatar("com4", "blog/comentarios/leitor-henrique-alves-avatar.webp", 62, "HA", "#7b3f3f",
+       "Avatar do leitor Henrique Alves", "Henrique Alves", altura=64)  # template: c4.jpg = 62x64
 avatar("com5", "blog/comentarios/leitora-sofia-rocha-avatar.webp", 60, "SR", "#4a6c8a",
        "Avatar da leitora Sofia Rocha", "Sofia Rocha")

@@ -11,13 +11,3 @@ Dica: quanto maior a foto original, melhor (mínimo indicado ao lado de cada cha
 --- AINDA FALTAM (aparecem como 'FOTO PENDENTE' no site) ---
 
 --- JÁ USAMOS UMA VERSÃO PROVISÓRIA (coloque o ORIGINAL para trocar) ---
-  bar.jpg                Bar com prateleiras de garrafas e banquetas
-  camarao.jpg            Tagliatelle/espaguete com camaroes e ervas frescas
-  cerveja.jpg            Balcao com chopeiras de cerveja
-  externa.jpg            Rua/area externa italiana com mesas ao ar livre
-  lasanha.jpg            Fatia de lasanha a bolonhesa gratinada em prato branco
-  ossobuco.jpg           Prato de ossobuco com molho de tomate, cenoura e salsinha
-  pizza.jpg              Close de pizza margherita com folhas de manjericao
-  pizza_forno.jpg        Pizza artesanal sobre bandeja, com manjericao e tomates ao redor (min. 1920 px de largura)
-  salao.jpg              Salao interno rustico do restaurante
-  terraco.jpg            Terraco/patio rustico com mesas e cadeiras azuis, vasos de flores e guarda-sois (min. 1920 px de largura)

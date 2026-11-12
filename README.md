@@ -72,11 +72,10 @@ mais o `EMAIL-rascunho.txt` com destinatário, assunto e corpo prontos.
 - [x] Fotos de perfil dos 4 clientes dos depoimentos: rostos **fictícios gerados por IA** (domínio público,
       Wikimedia Commons; créditos em `fotos-originais/CREDITOS.md`). Os avatares dos comentários e do autor do
       blog ainda são monogramas (iniciais)
-- [ ] Colocar em `fotos-originais/` os arquivos **originais** das 10 fotos que o grupo já usava
-      (`terraco`, `pizza_forno`, `pizza`, `ossobuco`, `lasanha`, `camarao`, `salao`, `bar`, `cerveja`, `externa`).
-      Hoje o site usa a versão WebP delas (em `ferramentas/fontes-provisorias/`); anote também a autoria/fonte
-      de cada uma em `fotos-originais/CREDITOS.md`
-- [x] Restos do template removidos (documentação `royal-Doc/`, `elements.html`, README do template)
+- [x] Fotos originais (sem otimização) dos ambientes e dos pratos principais também em `fotos-originais/`
+      (Wikimedia Commons, licenças livres; autoria e licença em `fotos-originais/CREDITOS.md` e no fim da página *Cardápio*)
+- [x] Restos do template removidos (documentação `royal-Doc/`, `elements.html`, README do template, imagens e CSS sem uso)
+- [x] Logo com a mesma proporção do template (163×30; arquivo em 2×, 326×60)
 - [x] Reserva de mesa funcional (mensagem pronta no WhatsApp) e script que gera o zip
 - [ ] Rodar `python ferramentas/gerar-zip.py` (depois de colocar os originais) e enviar o `.zip` para
       `maurice.chalom@professores.ibmec.edu.br` com o título **Trabalho AP2 - design gráfico e UX (8003)** e o

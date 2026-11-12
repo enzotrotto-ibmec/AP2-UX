@@ -16,6 +16,7 @@ Para cada imagem do MANIFESTO (ferramentas/manifesto.py):
   5. escreve ferramentas/relatorio-imagens.md (peso, formato, pendencias, ampliacoes)
 """
 import os
+import time
 import shutil
 import sys
 
@@ -32,7 +33,8 @@ OTIMIZADAS = os.path.join(RAIZ, "fotos-otimizadas")
 RELATORIO = os.path.join(RAIZ, "ferramentas", "relatorio-imagens.md")
 
 EXTS = (".jpg", ".jpeg", ".png", ".webp", ".tif", ".tiff", ".bmp")
-QUALIDADE = 82          # WebP: bom equilibrio peso x nitidez
+QUALIDADE = 74          # WebP (fotos pequenas/medias): bom equilibrio peso x nitidez
+QUALIDADE_FUNDO = 62    # WebP dos fundos grandes (1920 px, sob camada escura): bem mais leve
 LIMITE_AMPLIACAO = 1.15  # acima disso o relatorio avisa que a foto-base e pequena
 
 # ---------------------------------------------------------------- fontes tipograficas
@@ -94,8 +96,8 @@ def caixa_recorte(sw, sh, w, h, focus, zoom):
     bh = bw / alvo
     bw, bh = bw / zoom, bh / zoom
     cx, cy = focus[0] * sw, focus[1] * sh
-    x0 = min(max(cx - bw / 2, 0), sw - bw)
-    y0 = min(max(cy - bh / 2, 0), sh - bh)
+    x0 = max(0.0, min(max(cx - bw / 2, 0), sw - bw))
+    y0 = max(0.0, min(max(cy - bh / 2, 0), sh - bh))
     return (x0, y0, x0 + bw, y0 + bh)
 
 
@@ -154,11 +156,13 @@ def quadro_pendente(s):
 
 
 def monograma(s):
-    t = s["w"]
-    im = Image.new("RGB", (t, t), hex2rgb(s["cor"]))
+    w, h = s["w"], s["h"]
+    t = min(w, h)  # circulo e letras seguem o menor lado (funciona tambem para 62x64)
+    im = Image.new("RGB", (w, h), hex2rgb(s["cor"]))
     d = ImageDraw.Draw(im)
-    d.ellipse([t * .06, t * .06, t * .94, t * .94], outline=hex2rgb("#fff7e8"), width=max(1, t // 40))
-    d.text((t / 2, t / 2 + t * .02), s["ini"], font=serif_bold(int(t * .38)), fill=hex2rgb("#fff7e8"), anchor="mm")
+    cx, cy, r = w / 2, h / 2, t * .44
+    d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=hex2rgb("#fff7e8"), width=max(1, t // 40))
+    d.text((cx, cy + t * .02), s["ini"], font=serif_bold(int(t * .38)), fill=hex2rgb("#fff7e8"), anchor="mm")
     return im
 
 
@@ -170,27 +174,23 @@ def barra_tricolor(d, x, y, larg, alt):
 
 
 def logotipo(s):
+    """Logotipo (so o nome + faixa tricolor), mesma PROPORCAO do logo do template (163x30).
+    Desenhado em 4x e reduzido, para ficar nitido em qualquer tamanho."""
     w, h = s["w"], s["h"]
-    im = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    k = 4
+    W, H = w * k, h * k
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
-    f1 = serif_bold_italic(58)
+    f1 = serif_bold_italic(int(H * 0.60))
     texto = "Ristorantti"
     larg = d.textlength(texto, font=f1)
-    x0 = 6
-    d.text((x0, 38), texto, font=f1, fill=hex2rgb(ESCURO), anchor="ls")
-    barra_tricolor(d, x0 + 2, 50, larg - 2, 5)
-    sub = "CUCINA ITALIANA"
-    f2 = sans_bold(14)
-    esp = (larg - 2 - sum(d.textlength(c, font=f2) for c in sub)) / (len(sub) - 1)
-    x = x0 + 2
-    for c in sub:
-        d.text((x, 79), c, font=f2, fill=hex2rgb("#6b6b6b"), anchor="ls")
-        x += d.textlength(c, font=f2) + esp
-    # centraliza verticalmente o desenho, encostado a esquerda (como o logo original)
+    x0 = int(H * 0.04)
+    d.text((x0, int(H * 0.70)), texto, font=f1, fill=hex2rgb(ESCURO), anchor="ls")
+    barra_tricolor(d, x0 + int(H * 0.02), int(H * 0.80), larg - int(H * 0.02), int(H * 0.08))
     conteudo = im.crop(im.getbbox())
-    tela = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    tela.paste(conteudo, (0, (h - conteudo.height) // 2))
-    return tela
+    tela = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    tela.paste(conteudo, (0, (H - conteudo.height) // 2))
+    return tela.resize((w, h), Image.LANCZOS)
 
 
 def favicon(s):
@@ -224,10 +224,18 @@ def promo(s, base):
 # ---------------------------------------------------------------- salvar
 def salvar(im, caminho, kind):
     os.makedirs(os.path.dirname(caminho), exist_ok=True)
-    if caminho.endswith(".png"):
-        im.save(caminho, "PNG", optimize=True)
-    else:
-        im.save(caminho, "WEBP", quality=QUALIDADE, method=6)
+    for tentativa in range(5):  # o Windows (antivirus/sincronizacao) as vezes bloqueia a gravacao por instantes
+        try:
+            if caminho.endswith(".png"):
+                im.save(caminho, "PNG", optimize=True)
+            else:
+                q = QUALIDADE_FUNDO if im.width >= 1600 else QUALIDADE
+                im.save(caminho, "WEBP", quality=q, method=6)
+            return
+        except OSError:
+            if tentativa == 4:
+                raise
+            time.sleep(0.5)
 
 
 def kb(p):
